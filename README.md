@@ -2,18 +2,18 @@
 
 UniProt MCP — protein sequence + function database.
 
-Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 673+ live data sources.
+Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 965+ live data sources.
 
 ## Tools
 
 | Tool | Description |
 |------|-------------|
-| `search` | UniProtKB search (Lucene-style: "gene:BRCA1 AND organism_id:9606"). |
-| `get` | Single UniProtKB entry by accession. |
-| `proteomes_search` | Search reference proteomes. |
-| `taxonomy_search` | Search NCBI taxonomy via UniProt. |
-| `keyword` | UniProt keyword info (KW-####). |
-| `feature_summary` | Feature annotation summary (DOMAIN, MUTAGEN, etc.) for an accession. |
+| `search` | "Find protein [name]" / "look up [gene] in UniProt" / "BRCA1 / TP53 / insulin protein info" / "all proteins for [organism]" — UniProtKB search via Lucene-style queries (e.g. "gene:BRCA1 AND organism_id:9606" for human BRCA1). UniProt is the authoritative protein-sequence-and-function database — use for protein characterization, function annotation, sequence retrieval, and cross-references to PDB/GO/PubMed. |
+| `get` | "Fetch protein [P12345]" / "UniProt entry for [accession]" / "FASTA sequence for [protein]" — single UniProtKB entry by accession (e.g. P12345 or P38398 for BRCA1_HUMAN). Returns full protein record: sequence, function annotations, GO terms, cross-refs, post-translational modifications, variants. Pass format=fasta for sequence only. |
+| `proteomes_search` | "Reference proteome for [organism]" / "complete protein set of [species]" — search UniProt reference proteomes (the curated representative protein set per organism). Use as a starting point for genome-scale protein analyses. |
+| `taxonomy_search` | "NCBI taxonomy ID for [organism]" / "taxid for [species]" / "look up [Latin name] in NCBI taxonomy" — search NCBI Taxonomy via UniProt\'s mirror. Returns taxonomic IDs you can use as organism_id filters in `search` (9606 = human, 10090 = mouse, 7227 = D. melanogaster, etc). |
+| `keyword` | "UniProt keyword KW-N info" / "what does keyword [X] mean" — fetch a UniProt controlled-vocabulary keyword by ID. Use to look up annotation tags like "Kinase" / "Membrane" / "Disease-associated". |
+| `feature_summary` | "Domain map of [protein]" / "annotated features of [accession]" / "what regions / sites does [protein] have" — annotated features (domains, active sites, transmembrane regions, mutagenesis sites, glycosylation, disulfide bonds, etc.) for a UniProt accession. Use for structural/functional analysis without pulling the full protein record. |
 
 ## Quick Start
 
@@ -29,7 +29,7 @@ Add to your MCP client (Claude Desktop, Cursor, Windsurf, etc.):
 }
 ```
 
-Or connect to the full Pipeworx gateway for access to all 673+ data sources:
+Or connect to the full Pipeworx gateway for access to all 965+ data sources:
 
 ```json
 {

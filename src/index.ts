@@ -29,7 +29,7 @@ const UA = 'pipeworx-mcp-uniprot/1.0 (+https://pipeworx.io)';
 const tools: McpToolExport['tools'] = [
   {
     name: 'search',
-    description: 'UniProtKB search (Lucene-style: "gene:BRCA1 AND organism_id:9606").',
+    description: '"Find protein [name]" / "look up [gene] in UniProt" / "BRCA1 / TP53 / insulin protein info" / "all proteins for [organism]" — UniProtKB search via Lucene-style queries (e.g. "gene:BRCA1 AND organism_id:9606" for human BRCA1). UniProt is the authoritative protein-sequence-and-function database — use for protein characterization, function annotation, sequence retrieval, and cross-references to PDB/GO/PubMed.',
     inputSchema: {
       type: 'object',
       properties: {
@@ -43,7 +43,7 @@ const tools: McpToolExport['tools'] = [
   },
   {
     name: 'get',
-    description: 'Single UniProtKB entry by accession.',
+    description: '"Fetch protein [P12345]" / "UniProt entry for [accession]" / "FASTA sequence for [protein]" — single UniProtKB entry by accession (e.g. P12345 or P38398 for BRCA1_HUMAN). Returns full protein record: sequence, function annotations, GO terms, cross-refs, post-translational modifications, variants. Pass format=fasta for sequence only.',
     inputSchema: {
       type: 'object',
       properties: {
@@ -55,7 +55,7 @@ const tools: McpToolExport['tools'] = [
   },
   {
     name: 'proteomes_search',
-    description: 'Search reference proteomes.',
+    description: '"Reference proteome for [organism]" / "complete protein set of [species]" — search UniProt reference proteomes (the curated representative protein set per organism). Use as a starting point for genome-scale protein analyses.',
     inputSchema: {
       type: 'object',
       properties: {
@@ -67,7 +67,7 @@ const tools: McpToolExport['tools'] = [
   },
   {
     name: 'taxonomy_search',
-    description: 'Search NCBI taxonomy via UniProt.',
+    description: '"NCBI taxonomy ID for [organism]" / "taxid for [species]" / "look up [Latin name] in NCBI taxonomy" — search NCBI Taxonomy via UniProt\'s mirror. Returns taxonomic IDs you can use as organism_id filters in `search` (9606 = human, 10090 = mouse, 7227 = D. melanogaster, etc).',
     inputSchema: {
       type: 'object',
       properties: { query: { type: 'string' }, size: { type: 'number' } },
@@ -76,7 +76,7 @@ const tools: McpToolExport['tools'] = [
   },
   {
     name: 'keyword',
-    description: 'UniProt keyword info (KW-####).',
+    description: '"UniProt keyword KW-N info" / "what does keyword [X] mean" — fetch a UniProt controlled-vocabulary keyword by ID. Use to look up annotation tags like "Kinase" / "Membrane" / "Disease-associated".',
     inputSchema: {
       type: 'object',
       properties: { keyword_id: { type: 'string' } },
@@ -85,7 +85,7 @@ const tools: McpToolExport['tools'] = [
   },
   {
     name: 'feature_summary',
-    description: 'Feature annotation summary (DOMAIN, MUTAGEN, etc.) for an accession.',
+    description: '"Domain map of [protein]" / "annotated features of [accession]" / "what regions / sites does [protein] have" — annotated features (domains, active sites, transmembrane regions, mutagenesis sites, glycosylation, disulfide bonds, etc.) for a UniProt accession. Use for structural/functional analysis without pulling the full protein record.',
     inputSchema: {
       type: 'object',
       properties: { accession: { type: 'string' } },

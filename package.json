@@ -1,7 +1,7 @@
 {
   "name": "@pipeworx/mcp-uniprot",
   "version": "0.1.0",
-  "description": "UniProt protein sequence + function knowledge-base (EBI)",
+  "description": "UniProt MCP — protein sequence + function database.",
   "type": "module",
   "main": "src/index.ts",
   "types": "src/index.ts",
