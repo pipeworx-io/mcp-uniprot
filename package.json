@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-uniprot",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "UniProt MCP — protein sequence + function database.",
   "type": "module",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
     "mode": "gateway",
     "slug": "uniprot",
     "gatewaySlug": "uniprot",
-    "sourceHash": "v1-3a9a8df58c7ad02eb8446b446972c4418492c2c01aacdd2da72003467c9c7658",
-    "sourceCommit": "98853f34516646cb7c4c1460f09249b262c0269e"
+    "sourceHash": "v1-01be018ca9fc0155948cef42c0fea6651fcee5dddc72c2106c62dff93f8f10ea",
+    "sourceCommit": "ca52e7ed1e1ccad897c2da1b0fa105edc0bc3b2e"
   }
 }
